@@ -9,7 +9,7 @@ test('MyNewTest', async ({ page }) => {
     await page.locator('#nav-search-submit-button').click();
 });
 
-test.only('ENdtoENdTest', async({page})=>
+test('ENdtoENdTest', async({page})=>
 {
     await page.goto("https://rahulshettyacademy.com/client/#/auth/login");
     await page.locator("input#userEmail").fill('Kohli18@gmail.com');

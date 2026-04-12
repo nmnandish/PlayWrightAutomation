@@ -1,13 +1,13 @@
 const {test, expect} = require('@playwright/test')
 
-test('MyNewTest', async ({ page }) => {
-    await page.goto('https://www.amazon.com/');
-   // await page.getByRole('link', { name: 'Get started' }).click();
-    // await expect(page).toHaveTitle('Fast and reliable end-to-end testing for modern web apps | Playwright');
-    // console.log(await page.title());
-    await page.locator('input#twotabsearchtextbox').fill('s26 ultra');
-    await page.locator('#nav-search-submit-button').click();
-});
+// test('MyNewTest', async ({ page }) => {
+//     await page.goto('https://www.amazon.com/');
+//    // await page.getByRole('link', { name: 'Get started' }).click();
+//     // await expect(page).toHaveTitle('Fast and reliable end-to-end testing for modern web apps | Playwright');
+//     // console.log(await page.title());
+//     await page.locator('input#twotabsearchtextbox').fill('s26 ultra');
+//     await page.locator('#nav-search-submit-button').click();
+// });
 
 test('ENdtoENdTest', async({page})=>
 {

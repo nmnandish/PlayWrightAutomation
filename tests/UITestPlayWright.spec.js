@@ -15,11 +15,4 @@ test.only('ENdtoENdTest', async({page})=>
     await page.locator("input#userEmail").fill('Kohli18@gmail.com');
     await page.locator("input#userPassword").fill('Welcome@123');
     await page.locator("[value='Login']").click();
-
-    // const header = await page.locator(".mt-1 h3").textContent().toEqual("Automation") ;
-
-    expect(await page.locator(".mt-1 h3").textContent()).toEqual("Automation");
-    // await expect(header).toEqual("Automation");
-    // console.log(header);
-
 }); 

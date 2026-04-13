@@ -15,4 +15,5 @@ test('ENdtoENdTest', async({page})=>
     await page.locator("input#userEmail").fill('Kohli18@gmail.com');
     await page.locator("input#userPassword").fill('Welcome@123');
     await page.locator("[value='Login']").click();
+    expect(await page.locator("[value='Login']").toBeVisible()).isFalsy();
 }); 

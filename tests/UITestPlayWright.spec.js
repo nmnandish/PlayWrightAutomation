@@ -1,19 +1,19 @@
-const {test, expect} = require('@playwright/test')
+import { test, expect } from '../Fixtures/App.Fixtures.js';
 
-test('MyNewTest', async ({ page }) => {
-    await page.goto('https://www.amazon.com/');
-   // await page.getByRole('link', { name: 'Get started' }).click();
-    // await expect(page).toHaveTitle('Fast and reliable end-to-end testing for modern web apps | Playwright');
-    // console.log(await page.title());
-    await page.locator('input#twotabsearchtextbox').fill('s26 ultra');
-    await page.locator('#nav-search-submit-button').click();
+
+test('LoginTestUI', async ({ HomePage, LoginPage }) => {
+    await LoginPage.LoginToApp("Kohli18@gmail.com", "Welcome@123");
+    const lab = await HomePage.DoValidateTheHome();
+    await expect(lab.label).toEqual("Join Rahul Shetty for a QA Career Meetup in CHENNAI — Book Your Spot");
+    await expect(lab.label).toContain("Join Rahul Shetty for a QA Career Meetup in CHENNAI — Book Your Spot");
+    await expect(lab.label).toBe("Join Rahul Shetty for a QA Career Meetup in CHENNAI — Book Your Spot");
+    await expect(lab.label).toContain("Book Your Spot");
+    console.log(lab.signOut);
+    await expect(lab.signOut).toBeTruthy();
 });
 
-test('ENdtoENdTest', async({page})=>
-{
-    await page.goto("https://rahulshettyacademy.com/client/#/auth/login");
-    await page.locator("input#userEmail").fill('Kohli18@gmail.com');
-    await page.locator("input#userPassword").fill('Welcome@123');
-    await page.locator("[value='Login']").click();
-    await expect(page.locator("[value='Login']").isHidden()).toBeTruthy();
-}); 
+
+
+
+
+

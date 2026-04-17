@@ -19,3 +19,8 @@ test('Test Adding Item to Cart', async ({ HomePage, LoginPage }) => {
     await HomePage.AddItemToCart("ZARA COAT 3");
     console.log("Item Added to Cart");
 });
+
+test('Login Test Via API', async ({ LoginViaAPI }) => {
+console.log(LoginViaAPI.message);
+});
+

@@ -1,7 +1,7 @@
 import { test, expect } from '../Fixtures/App.Fixtures.js';
 
 
-test('LoginTestUI', async ({ HomePage, LoginPage }) => {
+test('Login to UAT and validate the home page', async ({ HomePage, LoginPage }) => {
     await LoginPage.LoginToApp("Kohli18@gmail.com", "Welcome@123");
     const lab = await HomePage.DoValidateTheHome();
     await expect(lab.label).toEqual("Join Rahul Shetty for a QA Career Meetup in CHENNAI — Book Your Spot");
@@ -12,8 +12,10 @@ test('LoginTestUI', async ({ HomePage, LoginPage }) => {
     await expect(lab.signOut).toBeTruthy();
 });
 
-
-
-
-
-
+test('Test Adding Item to Cart', async ({ HomePage, LoginPage }) => {
+    await LoginPage.LoginToApp("Kohli18@gmail.com", "Welcome@123");
+    const lab = await HomePage.DoValidateTheHome();
+    await expect(lab.label).toContain("Book Your Spot");
+    await HomePage.AddItemToCart("ZARA COAT 3");
+    console.log("Item Added to Cart");
+});

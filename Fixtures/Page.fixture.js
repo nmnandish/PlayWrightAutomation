@@ -1,4 +1,3 @@
-import { test as base } from '@playwright/test';
 import { HomePage } from "../Pages/HomePage.page";
 import { LoginPage } from "../Pages/LoginPage.page";
 
@@ -14,7 +13,7 @@ import { LoginPage } from "../Pages/LoginPage.page";
 // });
 
 
-//With Out Extend
+//With Out Extend test, just declare the page fixture and export it.
 export const pageFixture = {
     HomePage: async ({ page }, use) => {
         const homePage = new HomePage(page);
@@ -23,5 +22,5 @@ export const pageFixture = {
     LoginPage: async ({ page }, use) => {
         const loginPage = new LoginPage(page);
         await use(loginPage);
-    }   
+    }
 };

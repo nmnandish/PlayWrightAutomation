@@ -13,7 +13,7 @@ import { LoginPage } from "../Pages/LoginPage.page";
 // });
 
 
-//With Out Extend test, just declare the page fixture and export it.
+//WithOut Extend test, just declare the page fixture and export it.
 export const pageFixture = {
     HomePage: async ({ page }, use) => {
         const homePage = new HomePage(page);

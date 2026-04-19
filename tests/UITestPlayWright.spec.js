@@ -20,7 +20,24 @@ test('Test Adding Item to Cart', async ({ HomePage, LoginPage }) => {
     console.log("Item Added to Cart");
 });
 
+// This test is to validate the API login and response via Fixture.
 test('Login Test Via API', async ({ LoginViaAPI }) => {
-console.log(LoginViaAPI.message);
+    console.log(LoginViaAPI.message);
 });
 
+//
+test('Login via API from APIUtils', async ({ page, APILOGIN, HomePage }) => {
+    await console.log(APILOGIN.message);
+
+    // Set the token in local storage before navigating to the page
+    await page.addInitScript(value => {
+        window.localStorage.setItem('token', value);
+    }, APILOGIN.token);
+    // Now navigate to the page, and it should recognize the user as logged in.
+
+    await page.goto("https://rahulshettyacademy.com/client/#/auth/login");
+
+    //Locating the elements like below is not efficient, we can create the member functions or variables in the HomePage POM.
+    await page.locator(".logo-holder").isVisible();
+    await page.locator(".logo-holder").click();
+})

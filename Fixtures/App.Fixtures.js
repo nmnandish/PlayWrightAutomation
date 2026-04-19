@@ -1,10 +1,16 @@
 import { test as base, expect } from '@playwright/test';
 import { pageFixture } from './Page.fixture';
 import { APIFix } from './APIAuth.fixture';
+import { ApiUtil } from '../utils/ApiUtil.utils';
 
 export const test = base.extend({
      ...pageFixture,
-     ...APIFix
+     ...APIFix,
+     APILOGIN: async ({ request }, use) => {
+          const APIUtil = new ApiUtil("Kohli18@gmail.com", "Welcome@123", request);
+          const APIResponse = await APIUtil.GetLoggedInUser();
+          await use(APIResponse);
+     }
 });
 
 export { expect };

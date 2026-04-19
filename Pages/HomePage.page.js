@@ -3,7 +3,7 @@ export class HomePage {
         this.page = page;
         //Locators
         this.cartButton = page.locator("button[routerlink*='cart']");
-        this.label1 = page.getByText('Join Rahul Shetty for a QA Career Meetup in CHENNAI — Book Your Spot');
+        this.label1 = page.getByText('Get Shortlisted by Recruiters - Take QA Skill Assessments on TechSmartHire');
         this.signOutButton = page.locator("i.fa-sign-out");
         this.itemTitle = page.locator(".card-body b");
         this.addToCartButton = page.locator(".card-body button:last-child");

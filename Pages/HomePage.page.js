@@ -19,7 +19,7 @@ export class HomePage {
     async AddItemToCart(itemName) {
         
         const titles = await this.itemTitle.allTextContents();
-        console.log(titles.length);
+        await console.log(titles.length);
         const totalItems = titles.length;
         for (let i = 0; i < totalItems; i++) {
             if (titles[i].includes(itemName)) {

@@ -1,4 +1,4 @@
-import { test as base, expect } from '@playwright/test';
+import { test as base, expect } from '@Playwright/test';
 import { pageFixture } from './Page.fixture';
 import { APIFix } from './APIAuth.fixture';
 import { ApiUtil } from '../utils/ApiUtil.utils';

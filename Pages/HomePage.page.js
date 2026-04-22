@@ -20,7 +20,7 @@ export class HomePage {
         
         const titles = await this.itemTitle.allTextContents();
         await console.log(titles.length);
-        const totalItems = titles.length;
+        const totalItems = titles.length; 
         for (let i = 0; i < totalItems; i++) {
             if (titles[i].includes(itemName)) {
                 await this.addToCartButton.nth(i).click();

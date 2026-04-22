@@ -1,6 +1,5 @@
 import { test, expect } from '../Fixtures/App.Fixtures.js';
 
-
 test('Login to UAT and validate the home page', async ({ HomePage, LoginPage }) => {
     await LoginPage.LoginToApp("Kohli18@gmail.com", "Welcome@123");
     const lab = await HomePage.DoValidateTheHome();
@@ -36,8 +35,8 @@ test('Login via API from APIUtils', async ({ page, APILOGIN, HomePage }) => {
 
     // Now navigate to the page, and it should recognize the user as logged in.
     await page.goto("https://rahulshettyacademy.com/client/#/auth/login");
-
+    
     //Locating the elements like below is not efficient, we can create the member functions or variables in the HomePage POM.
     await page.locator(".logo-holder").isVisible();
     await page.locator(".logo-holder").click();
-})
+});

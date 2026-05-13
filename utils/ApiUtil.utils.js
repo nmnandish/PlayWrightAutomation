@@ -4,7 +4,7 @@ export class ApiUtil {
         this.request = request;
         this.payload = { userEmail: userName, userPassword: password };
     }
-
+//new code
     async GetLoggedInUser() {
         const loginResponse = await this.request.post("https://rahulshettyacademy.com/api/ecom/auth/login", {
             data: this.payload
